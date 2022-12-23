@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
- 
+
 local Window = OrionLib:MakeWindow({Name = "ColorEX", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
- 
+
 local Tab = Window:MakeTab({
 	Name = "EB Misc.",
 	Icon = "rbxassetid://4483345998",
@@ -74,14 +74,22 @@ Tab:AddButton({
     end
 })
 local Section = Tab:AddSection({
-    Name = "EBPD belt"
+    Name = "EBPD items"
 })
 Tab:AddButton({
-    Name = "Wear Belt",
+    Name = "Wear EBPD Belt",
     Callback = function()
     local A_1 = "CopBeltOn"
     local Event = game:GetService("ReplicatedStorage").Events.ActionService
     Event:FireServer(A_1)
+    end
+})
+Tab:AddButton({
+    Name = "Cop Shop (Buy EBPD Cosmetics)",
+    Callback = function()
+        local A_1 = "CopHud"
+        local Event = game:GetService("ReplicatedStorage").Events.ActionService
+        Event:FireServer(A_1)
     end
 })
 local Tab = Window:MakeTab({
@@ -96,5 +104,19 @@ Tab:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+})
+Tab:AddButton({
+	Name = "Script Kill Admin",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+    end
+})
+Tab:AddParagraph("Instruction to script kill.","Make your alt max height max weight, and then hold out your phone and type ;kill (the person who u want to sk) if they are sitting this does not work. Must be standing.")
+
+Tab:AddButton({
+    Name = "ESP",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/fatesc/fates-esp/main/main.lua'))()
     end
 })
