@@ -1,0 +1,100 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+ 
+local Window = OrionLib:MakeWindow({Name = "ColorEX", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+ 
+local Tab = Window:MakeTab({
+	Name = "EB Misc.",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Car Stuff"
+})
+Tab:AddButton({
+	Name = "Car Wash",
+	Callback = function()
+        local A_1 = "CarWash"
+        local A_2 = game:GetService("Workspace").GameMap.Buildings.CarWash.Model.Model.Model.Model.CarWashStation
+        local Event = game:GetService("ReplicatedStorage").Events.ActionService
+        Event:FireServer(A_1, A_2)
+  	end    
+})
+OrionLib:MakeNotification({
+	Name = "Credits!",
+	Content = "Credits to No sin and Verpus",
+	Image = "rbxassetid://4483345998",
+	Time = 10
+})
+local Section = Tab:AddSection({
+	Name = "Car Color"
+})
+Tab:AddButton({
+	Name = "Fog Color",
+	Callback = function()
+        local A_1 = "PaintCar"
+        local A_2 = "Fog"
+        local Event = game:GetService("ReplicatedStorage").Events.VehicleService
+        Event:FireServer(A_1, A_2)
+    end
+})
+Tab:AddButton({
+	Name = "Neon Color",
+	Callback = function()
+        local A_1 = "PaintCar"
+        local A_2 = "Lime green"
+        local Event = game:GetService("ReplicatedStorage").Events.VehicleService
+        Event:FireServer(A_1, A_2)
+    end
+})
+Tab:AddButton({
+	Name = "Sky Purple Color",
+	Callback = function()
+        local A_1 = "PaintCar"
+        local A_2 = "Alder"
+        local Event = game:GetService("ReplicatedStorage").Events.VehicleService
+        Event:FireServer(A_1, A_2)
+    end
+})
+Tab:AddButton({
+	Name = "Toothpaste Color",
+	Callback = function()
+        local A_1 = "PaintCar"
+        local A_2 = "Toothpaste"
+        local Event = game:GetService("ReplicatedStorage").Events.VehicleService
+        Event:FireServer(A_1, A_2)
+    end
+})
+Tab:AddButton({
+	Name = "Baby Blue Color",
+	Callback = function()
+        local A_1 = "PaintCar"
+        local A_2 = "Baby blue"
+        local Event = game:GetService("ReplicatedStorage").Events.VehicleService
+        Event:FireServer(A_1, A_2)
+    end
+})
+local Section = Tab:AddSection({
+    Name = "EBPD belt"
+})
+Tab:AddButton({
+    Name = "Wear Belt",
+    Callback = function()
+    local A_1 = "CopBeltOn"
+    local Event = game:GetService("ReplicatedStorage").Events.ActionService
+    Event:FireServer(A_1)
+    end
+})
+local Tab = Window:MakeTab({
+	Name = "Script Opener",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Openers"
+})
+Tab:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+})
